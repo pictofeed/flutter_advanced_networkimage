@@ -5,6 +5,7 @@ import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
 import 'package:flutter/widgets.dart';
+import 'dart:ui' as ui;
 
 /// Calculate crc32 checksum
 ///
