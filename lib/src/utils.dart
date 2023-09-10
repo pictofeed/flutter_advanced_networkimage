@@ -455,5 +455,3 @@ class OffsetTween extends Tween<Offset?> {
   @override
   Offset lerp(double t) => (begin! + (end! - begin!) * t);
 }
-
-typedef DecoderCallback = Future<ui.Codec> Function(Uint8List buffer, {int? cacheWidth, int? cacheHeight, bool allowUpscaling});
