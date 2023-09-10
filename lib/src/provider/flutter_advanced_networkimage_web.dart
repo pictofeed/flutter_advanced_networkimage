@@ -129,7 +129,7 @@ class AdvancedNetworkImage extends ImageProvider<AdvancedNetworkImage> {
   }
 
   @override
-  ImageStreamCompleter load(AdvancedNetworkImage key, ImageDecoderCallback decode) {
+  ImageStreamCompleter load(AdvancedNetworkImage key, DecoderCallback decode) {
     return MultiFrameImageStreamCompleter(
       codec: _loadAsync(key, decode)!.then((value) => value),
       scale: key.scale,
@@ -141,7 +141,7 @@ class AdvancedNetworkImage extends ImageProvider<AdvancedNetworkImage> {
   }
 
   Future<ui.Codec>? _loadAsync(
-      AdvancedNetworkImage key, ImageDecoderCallback decode) {
+      AdvancedNetworkImage key, DecoderCallback decode) {
     assert(key == this);
 
     final Uri resolved = Uri.base.resolve(key.url);
