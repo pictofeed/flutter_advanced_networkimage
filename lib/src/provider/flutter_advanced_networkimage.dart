@@ -135,7 +135,7 @@ class AdvancedNetworkImage extends ImageProvider<AdvancedNetworkImage> {
   }
 
   @override
-  ImageStreamCompleter load(AdvancedNetworkImage key, DecoderCallback decode) {
+  ImageStreamCompleter load(AdvancedNetworkImage key, ImageDecoderCallback decode) {
     final chunkEvents = StreamController<ImageChunkEvent>();
 
     return MultiFrameImageStreamCompleter(
@@ -151,7 +151,7 @@ class AdvancedNetworkImage extends ImageProvider<AdvancedNetworkImage> {
 
   Future<ui.Codec> _loadAsync(
     AdvancedNetworkImage key,
-    DecoderCallback decode,
+    ImageDecoderCallback decode,
     StreamController<ImageChunkEvent> chunkEvents,
   ) async {
     assert(key == this);
